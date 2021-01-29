@@ -1404,3 +1404,6 @@
 
 /* Failed Login */
 "LitecoinCard.failed.login" = "Login failed";
+
+/* lookupFailureHeader */
+"Send.UnstoppableDomains.lookupFailureHeader" = "Lookup failed";
