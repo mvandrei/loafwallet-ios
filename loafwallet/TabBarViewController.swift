@@ -282,7 +282,7 @@ class TabBarViewController: UIViewController, Subscriber, Trackable, UITabBarDel
                           options: .transitionFlipFromLeft,
                           animations: { [weak self] in
                             self?.currentLTCPriceLabel.text =  newPrice
-                          }, completion: nil) 
+                          }, completion: nil)
     }
     
     /// Transform LTC and Fiat  Balances
@@ -414,6 +414,8 @@ extension TabBarViewController {
             NSLayoutConstraint.deactivate(!isLTCSwapped ? self.regularConstraints : self.swappedConstraints)
             NSLayoutConstraint.activate(!isLTCSwapped ? self.swappedConstraints : self.regularConstraints)
             self.view.layoutIfNeeded()
+            
+            LWAnalytics.logEventWithParameters(itemName: ._20200207_DTHB)
             
         }) { _ in }
         store.perform(action: CurrencyChange.toggle())
